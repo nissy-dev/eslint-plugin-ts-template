@@ -49,6 +49,10 @@
       "npx eslint --fix",
       "npx prettier --write",
       "git add"
+    ],
+    "*.{json,yaml,md}": [
+      "prettier --write",
+      "git add"
     ]
   },
   "repository": {
