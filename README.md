@@ -51,11 +51,6 @@ Use [npm](https://www.npmjs.com/) or a compatibility tool to install.
 $ npm install --save-dev eslint eslint-plugin-xxxx
 ```
 
-### Requirements
-
-- Node.js v8.10.0 or newer versions.
-- ESLint v5.16.0 or newer versions.
-
 ## Usage
 
 Write your config file such as `.eslintrc.yml`.
@@ -77,11 +72,9 @@ See also [Configuring ESLint](https://eslint.org/docs/user-guide/configuring).
 
 <!--RULE_TABLE_BEGIN-->
 
-### Stylistic Issues
-
-| Rule ID                                           | Description      |     |
-| :------------------------------------------------ | :--------------- | :-: |
-| [xxxx/example-rule](./docs/rules/example-rule.md) | An example rule. | ⭐️ |
+| Rule ID                                           | Description      | recommended |
+| :------------------------------------------------ | :--------------- | :---------: |
+| [xxxx/example-rule](./docs/rules/example-rule.md) | An example rule. |     ⭐️     |
 
 <!--RULE_TABLE_END-->
 

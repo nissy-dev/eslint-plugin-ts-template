@@ -1,3 +1,3 @@
 module.exports = {
-  printWidth: 100,
+  branches: ["main"],
 };

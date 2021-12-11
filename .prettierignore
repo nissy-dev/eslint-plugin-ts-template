@@ -1,3 +1,4 @@
-!.*.js
-/node_modules
-/dist
+node_modules
+dist
+src/index.ts
+src/configs/recommended.ts

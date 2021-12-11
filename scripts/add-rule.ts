@@ -1,27 +1,24 @@
-import fs from 'fs';
-import path from 'path';
-import { pluginId } from './lib/plugin-id';
+import fs from "fs";
+import path from "path";
+import { pluginId } from "./lib/plugin-id";
 (() => {
   const ruleId = process.argv[2];
 
   // Require rule ID.
   if (!ruleId) {
-    console.error('Usage: npm run add-rule <RULE_ID>');
+    console.error("Usage: npm run add-rule <RULE_ID>");
     process.exitCode = 1;
     return;
   }
 
-  const docPath = path.resolve(__dirname, '../docs/rules', `${ruleId}.md`);
-  const rulePath = path.resolve(__dirname, '../src/rules', `${ruleId}.ts`);
-  const testPath = path.resolve(__dirname, '../tests/rules', `${ruleId}.ts`);
+  const docPath = path.resolve(__dirname, "../docs/rules", `${ruleId}.md`);
+  const rulePath = path.resolve(__dirname, "../src/rules", `${ruleId}.ts`);
+  const testPath = path.resolve(__dirname, "../tests/rules", `${ruleId}.test.ts`);
 
   // Overwrite check.
   for (const filePath of [docPath, rulePath, testPath]) {
     if (fs.existsSync(filePath)) {
-      console.error(
-        '%o has existed already.',
-        path.relative(process.cwd(), filePath)
-      );
+      console.error("%o has existed already.", path.relative(process.cwd(), filePath));
       process.exitCode = 1;
       return;
     }
@@ -55,16 +52,14 @@ const rule: TSESLint.RuleModule<"", []> = {
       // TODO: write the rule summary.
       description: "",
 
-      // TODO: choose the rule category.
-      category: "Possible Errors",
-      category: "Best Practices",
-      category: "Stylistic Issues",
-
+      // TODO: choose the recommended type.
+      recommended: "error",
+      recommended: "warn",
       recommended: false,
-      url: "",
+
+      url: "https://github.com/nissy-dev/eslint-plugin-ts-template/blob/main/docs/rules/${ruleId}.md",
     },
 
-    fixable: null,
     messages: {},
     schema: [],
 
@@ -85,13 +80,14 @@ export = rule;
 
   fs.writeFileSync(
     testPath,
-    `
-import { TSESLint } from "@typescript-eslint/experimental-utils";
+    `import { tester } from "..";
 import rule from "../../src/rules/${ruleId}";
 
-new TSESLint.RuleTester().run("${ruleId}", rule, {
-  valid: [],
-  invalid: [],
+describe("Test for ${ruleId}", () => {
+  tester.run("${ruleId}", rule, {
+    valid: [],
+    invalid: [],
+  });
 });
 `
   );

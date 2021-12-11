@@ -4,6 +4,10 @@
 >
 > - ⭐️ This rule is included in `plugin:xxxx/recommended` preset.
 
+> An example rule.
+>
+> - ⭐️ This rule is included in `plugin:xxxx/recommended` preset.
+
 This is an example.
 
 ## Rule Details
@@ -33,4 +37,4 @@ Nothing.
 ## Implementation
 
 - [Rule source](../../src/rules/example-rule.ts)
-- [Test source](../../tests/rules/example-rule.ts)
+- [Test source](../../tests/rules/example-rule.test.ts)
