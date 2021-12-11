@@ -27,6 +27,16 @@ This template uses [Jest](https://jestjs.io/) and [GitHub Actions](https://githu
   - `lib/index.ts` file.
   - the rule table in `README.md` file.
 
+**Github Actions**:
+
+This template defines two workflows.
+
+- `.github/workflows/lint.yaml`
+  - Run linting and testing for each commit.
+- `.github/workflows/release.yaml`
+  - Release new packages when adding new tags.
+  - You need to set `NPM_TOKEN` to repository secrets.
+
 Below is an example of README.
 
 ---
@@ -48,18 +58,20 @@ A template for ESLint plugins.
 Use [npm](https://www.npmjs.com/) or a compatibility tool to install.
 
 ```
-$ npm install --save-dev eslint eslint-plugin-xxxx
+$ npm install --save-dev eslint-plugin-xxxx
 ```
 
 ## Usage
 
-Write your config file such as `.eslintrc.yml`.
+Write your config file such as `.eslintrc`.
 
-```yml
-plugins:
-  - xxxx
-rules:
-  xxxx/example-rule: error
+```json
+{
+  "plugins": ["xxxx"],
+  "rules": {
+    "xxxx/example-rule": "error"
+  }
+}
 ```
 
 See also [Configuring ESLint](https://eslint.org/docs/user-guide/configuring).
