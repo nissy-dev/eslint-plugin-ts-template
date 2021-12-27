@@ -27,7 +27,7 @@
     "update": "ts-node scripts/update"
   },
   "dependencies": {
-    "@typescript-eslint/experimental-utils": "^5.6.0"
+    "@typescript-eslint/experimental-utils": "^5.8.0"
   },
   "devDependencies": {
     "@types/eslint": "^8.2.1",
