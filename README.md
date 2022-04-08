@@ -34,8 +34,12 @@ This template defines two workflows.
 - `.github/workflows/lint.yaml`
   - Run linting and testing for each commit.
 - `.github/workflows/release.yaml`
-  - Release new packages when adding new tags.
+  - Release new packages when publish new release.
   - You need to set `NPM_TOKEN` to repository secrets.
+- `.github/workflows/release-drafter.yaml`
+  - Update draft release note by `release-drafter`
+- `.github/workflows/dependabot-automerge.yaml`
+  - Merge PRs created by `dependabot` automatically.
 
 Below is an example of README.
 

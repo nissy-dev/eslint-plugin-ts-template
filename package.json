@@ -47,12 +47,10 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "npx eslint --fix",
-      "npx prettier --write",
-      "git add"
+      "npx prettier --write"
     ],
     "*.{json,yaml,md}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "repository": {
