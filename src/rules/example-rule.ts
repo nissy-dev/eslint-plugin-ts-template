@@ -1,6 +1,7 @@
 import { TSESLint } from "@typescript-eslint/experimental-utils";
 
-const rule: TSESLint.RuleModule<"disallowExample", []> = {
+const rule: TSESLint.RuleModule<"disallowExample"> = {
+  defaultOptions: [],
   meta: {
     docs: {
       description: "An example rule.",
